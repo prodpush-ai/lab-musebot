@@ -18,6 +18,9 @@ conf/mcp/mcp-*.json
 conf/systemd/.env-*
 conf/systemd/musebot-*.service
 
+# Generated TLS private keys
+admin/shell/certs/*.key
+
 bin/
 build/
 output/
