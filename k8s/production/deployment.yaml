@@ -18,11 +18,12 @@ spec:
         - name: app
           image: lab-musebot:latest
           ports:
-            - containerPort: 8080
+            # port: the first of the ports the Dockerfile EXPOSEs (36060, 18080); nothing says which one serves HTTP, so check it
+            - containerPort: 36060
           # readiness path: GUESSED: no health route found in the files read; if the app does not answer 2xx on `/`, the probe never passes and the rollout stalls
           readinessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: 36060
             initialDelaySeconds: 5
             periodSeconds: 5
