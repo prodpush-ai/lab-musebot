@@ -3,3 +3,4 @@
 .idea
 *.md
 *.log
+admin/shell/certs/*.key
