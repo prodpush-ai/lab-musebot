@@ -17,6 +17,11 @@ spec:
       containers:
         - name: app
           image: lab-musebot:latest
+          securityContext:
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            runAsUser: 65532
           ports:
             # port: the first of the ports the Dockerfile EXPOSEs (36060, 18080); nothing says which one serves HTTP, so check it
             - containerPort: 36060
