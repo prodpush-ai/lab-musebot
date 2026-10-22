@@ -23,3 +23,6 @@ build/
 output/
 data/
 release/
+
+# Private keys
+admin/shell/certs/*.key
